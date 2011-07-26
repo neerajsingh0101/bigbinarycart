@@ -1,20 +1,4 @@
 
---- 
-categories: 
-  columns: 
-  - id
-  - name
-  - created_at
-  - updated_at
-  records: 
-  - - 1
-    - Teas
-    - 2010-03-26 15:10:51
-    - 2010-03-26 15:10:51
-  - - 2
-    - Hardware
-    - 2010-03-26 20:48:12
-    - 2010-03-26 20:48:12
 
 --- 
 orders: 
