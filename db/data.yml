@@ -1,0 +1,255 @@
+
+--- 
+categories: 
+  columns: 
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Teas
+    - 2010-03-26 15:10:51
+    - 2010-03-26 15:10:51
+  - - 2
+    - Hardware
+    - 2010-03-26 20:48:12
+    - 2010-03-26 20:48:12
+
+--- 
+orders: 
+  columns: 
+  - id
+  - user_id
+  - order_number
+  - created_at
+  - updated_at
+  records: 
+  - - 29
+    - 
+    - 
+    - 2011-07-26 13:38:29.975327
+    - 2011-07-26 13:38:29.975327
+  - - 30
+    - 
+    - 
+    - 2011-07-26 14:52:17.455384
+    - 2011-07-26 14:52:17.455384
+  - - 31
+    - 
+    - 
+    - 2011-07-26 17:36:34.431191
+    - 2011-07-26 17:36:34.431191
+  - - 32
+    - 
+    - 
+    - 2011-07-26 17:43:55.268886
+    - 2011-07-26 17:43:55.268886
+  - - 33
+    - 
+    - 
+    - 2011-07-26 18:41:28.691064
+    - 2011-07-26 18:41:28.691064
+  - - 34
+    - 
+    - 
+    - 2011-07-26 18:43:44.758536
+    - 2011-07-26 18:43:44.758536
+
+--- 
+line_items: 
+  columns: 
+  - id
+  - order_id
+  - product_id
+  - quantity
+  - created_at
+  - updated_at
+  records: 
+  - - 2
+    - 30
+    - 21
+    - 1
+    - 2011-07-26 17:29:35.601307
+    - 2011-07-26 17:29:35.601307
+  - - 3
+    - 30
+    - 16
+    - 1
+    - 2011-07-26 17:31:46.567735
+    - 2011-07-26 17:31:46.567735
+  - - 4
+    - 30
+    - 17
+    - 1
+    - 2011-07-26 17:32:55.100213
+    - 2011-07-26 17:32:55.100213
+  - - 5
+    - 30
+    - 18
+    - 1
+    - 2011-07-26 17:35:41.339073
+    - 2011-07-26 17:35:41.339073
+  - - 6
+    - 32
+    - 18
+    - 1
+    - 2011-07-26 17:44:43.552380
+    - 2011-07-26 17:44:43.552380
+  - - 7
+    - 32
+    - 20
+    - 1
+    - 2011-07-26 18:41:22.620621
+    - 2011-07-26 18:41:22.620621
+  - - 8
+    - 32
+    - 17
+    - 1
+    - 2011-07-26 18:41:27.357859
+    - 2011-07-26 18:41:27.357859
+  - - 9
+    - 29
+    - 17
+    - 2
+    - 2011-07-26 18:43:10.887295
+    - 2011-07-26 18:43:30.186547
+
+--- 
+products: 
+  columns: 
+  - id
+  - name
+  - description
+  - price
+  - new
+  - created_at
+  - updated_at
+  - picture_file_name
+  - picture_content_type
+  - picture_file_size
+  - picture_updated_at
+  - active
+  records: 
+  - - 16
+    - iPad
+    - "A magical and revolutionary product at an unbelievable price.\r\n\
+      \r\n\
+      A large, high-resolution LED-backlit IPS display. An incredibly responsive Multi-Touch screen. And an amazingly powerful Apple-designed chip. All in a design that\xE2\x80\x99s thin and light enough to take anywhere. iPad isn\xE2\x80\x99t just the best device of its kind. It\xE2\x80\x99s a whole new kind of device."
+    - 499.99
+    - false
+    - 2010-03-26 20:50:08
+    - 2010-03-26 20:50:08
+    - Screen_shot_2010-03-26_at_4.47.17_PM.png
+    - image/png
+    - 34085
+    - 2010-03-26 20:50:08
+    - true
+  - - 17
+    - iMac
+    - "The ultimate all-in-one.  Now with the ultimate display.\r\n\
+      \r\n\
+      Full brightness with no waiting. That\xE2\x80\x99s the big advantage of the LED-backlit iMac display. Unlike most displays that take time to warm up before they reach maximum brightness, an LED-backlit display is instantly on and uniformly bright. LED backlighting also gives you greater control over screen brightness. So you can finely tune the iMac display to suit the ambient light in even the dimmest room."
+    - 1699.99
+    - false
+    - 2010-03-26 20:54:57
+    - 2010-03-26 20:54:57
+    - Screen_shot_2010-03-26_at_4.51.11_PM.png
+    - image/png
+    - 39239
+    - 2010-03-26 20:54:57
+    - true
+  - - 18
+    - Mac Pro
+    - "Beauty outside.  Beast inside.\r\n\
+      \r\n\
+      With four cores on one die and an integrated memory controller, the new Quad-Core Intel Xeon \xE2\x80\x9CNehalem\xE2\x80\x9D processor boosts performance nearly 2x.\r\n"
+    - 2499.99
+    - false
+    - 2010-03-26 20:57:04
+    - 2010-03-26 20:57:04
+    - Screen_shot_2010-03-26_at_4.55.11_PM.png
+    - image/png
+    - 32875
+    - 2010-03-26 20:57:04
+    - true
+  - - 20
+    - Apple TV
+    - Stream movies, TV shows, music, photos, and more to the smaller, redesigned Apple TV. All you need is a single cable to set it up.
+    - 199
+    - false
+    - 2011-07-26 15:04:04.358331
+    - 2011-07-26 15:04:04.358331
+    - apple_tv.jpg
+    - image/jpeg
+    - 25983
+    - 2011-07-26 15:04:03.610074
+    - true
+  - - 21
+    - iPad2
+    - |-
+      Thinner. Lighter. Faster.
+      FaceTime. Smart Covers. 10-hour battery.
+    - 499
+    - true
+    - 2011-07-26 15:06:53.191597
+    - 2011-07-26 15:07:20.630113
+    - step0-ipad-gallery-image2.png
+    - image/png
+    - 29009
+    - 2011-07-26 15:06:52.911797
+    - true
+  - - 22
+    - iPhone4
+    - "iPhone4 has facetime. People have been dreaming about video calling for decades. iPhone 4 makes it a reality. With the tap of a button, you can wave hello to your kids, share a smile from across the globe, or watch your best friend laugh at your stories \xE2\x80\x94 iPhone 4 to iPhone 4, iPad 2, the new iPod touch, or Mac over Wi-Fi. No other phone makes staying in touch this much fun."
+    - 199
+    - false
+    - 2011-07-26 18:51:54.259340
+    - 2011-07-26 18:51:54.259340
+    - iphone.jpg
+    - image/jpeg
+    - 59777
+    - 2011-07-26 18:51:54.093663
+    - true
+  - - 23
+    - iPod Classic
+    - |
+      Available in quintessential silver or striking black, iPod classic catches your eye with its sleek, all-metal enclosure composed of anodized aluminum and polished stainless steel.
+
+    - 249
+    - false
+    - 2011-07-26 18:53:54.983013
+    - 2011-07-26 18:53:54.983013
+    - product-white-classic.jpg
+    - image/jpeg
+    - 22514
+    - 2011-07-26 18:53:54.824541
+    - true
+  - - 24
+    - Mac Mini
+    - "Ships with Lion\r\n\
+      The New Mac mini.\r\n\
+      \r\n\
+      Up to 2x faster processors and graphics.*\r\n\
+      High-speed Thunderbolt I/O. It\xE2\x80\x99s mini in size only."
+    - 599
+    - false
+    - 2011-07-26 18:55:26.902677
+    - 2011-07-26 18:55:26.902677
+    - mac_mini.png
+    - image/png
+    - 20067
+    - 2011-07-26 18:55:26.680810
+    - true
+  - - 25
+    - MacBook Air
+    - air
+    - 1599
+    - false
+    - 2011-07-26 18:57:02.008005
+    - 2011-07-26 18:57:02.008005
+    - air.jpg
+    - image/jpeg
+    - 76198
+    - 2011-07-26 18:57:01.851684
+    - true
