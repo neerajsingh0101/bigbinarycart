@@ -17,125 +17,131 @@ products:
   records: 
   - - 16
     - iPad
-    - "A magical and revolutionary product at an unbelievable price.\r\n\
-      \r\n\
-      A large, high-resolution LED-backlit IPS display. An incredibly responsive Multi-Touch screen. And an amazingly powerful Apple-designed chip. All in a design that\xE2\x80\x99s thin and light enough to take anywhere. iPad isn\xE2\x80\x99t just the best device of its kind. It\xE2\x80\x99s a whole new kind of device."
+    - "The iPad (pronounced /\xCB\x88a\xC9\xAAp\xC3\xA6d/ eye-pad) is a line of tablet computers designed, developed and marketed by Apple Inc. primarily as a platform for audio-visual media including books, periodicals, movies, music, games, and web content. Its size and weight falls between those of contemporary smartphones and laptop computers. The iPad runs the same operating system as the iPod Touch and iPhone\xE2\x80\x94and can run its own applications as well as iPhone applications. Without modification, the iPad will only run programs approved by Apple and distributed via the Apple App Store (with the exception of programs that run inside the iPad's web browser)."
     - 499.99
     - false
     - 2010-03-26 20:50:08
-    - 2010-03-26 20:50:08
+    - 2011-07-27 03:11:13.348069
     - Screen_shot_2010-03-26_at_4.47.17_PM.png
     - image/png
     - 34085
-    - 2010-03-26 20:50:08
+    - 2010-03-26 20:50:00.000000
     - true
   - - 17
     - iMac
-    - "The ultimate all-in-one.  Now with the ultimate display.\r\n\
-      \r\n\
-      Full brightness with no waiting. That\xE2\x80\x99s the big advantage of the LED-backlit iMac display. Unlike most displays that take time to warm up before they reach maximum brightness, an LED-backlit display is instantly on and uniformly bright. LED backlighting also gives you greater control over screen brightness. So you can finely tune the iMac display to suit the ambient light in even the dimmest room."
+    - |-
+      The iMac is a range of all-in-one Macintosh desktop computers designed and built by Apple Inc. It has been the primary part of Apple's consumer desktop offerings since its introduction in 1998, and has evolved through five distinct forms.[1]
+      In its original form, the iMac G3 had a gum-drop or egg-shaped look, with a CRT monitor, mainly enclosed by a colored, translucent plastic case, which was refreshed early on with a sleeker design notable for its slot-loaded optical drive. The second major revision, the iMac G4, moved the design to a hemispherical base containing all the main components and an LCD monitor on a freely moving arm attached to it. The third/fourth major revision, the iMac G5 and the Intel iMac placed all the components immediately behind the display, creating a slim unified design that tilts only up and down on a simple metal base. The current iMac shares the same form as the previous model, but is thinner and uses anodized aluminum and a glass panel over the entire front. In addition it also added a SDXC slot directly under the Slot-Loading SuperDrive. Newer versions are available with a solid state drive instead of a hard drive. The newest version features quad-core Intel processors across the line, 1 (on 21.5") or 2 (on 27") Thunderbolt ports, and a FaceTime HD camera, features introduced on the early 2011 MacBook Pro updates.
     - 1699.99
     - false
     - 2010-03-26 20:54:57
-    - 2010-03-26 20:54:57
+    - 2011-07-27 03:10:30.849414
     - Screen_shot_2010-03-26_at_4.51.11_PM.png
     - image/png
     - 39239
-    - 2010-03-26 20:54:57
+    - 2010-03-26 20:54:00.000000
     - true
   - - 18
     - Mac Pro
-    - "Beauty outside.  Beast inside.\r\n\
-      \r\n\
-      With four cores on one die and an integrated memory controller, the new Quad-Core Intel Xeon \xE2\x80\x9CNehalem\xE2\x80\x9D processor boosts performance nearly 2x.\r\n"
+    - |
+      The Mac Pro is a workstation computer manufactured by Apple Inc.. The machines are based on Xeon microprocessors, but are similar to the Power Mac G5 they replaced in terms of outward appearance and expansion capabilities. The Mac Pro, in most configurations, is the fastest computer that Apple offers and one of three desktop computers in the current Macintosh lineup, the other two being the iMac and Mac Mini.
+      The first Mac Pro was based on dual Dual-core Xeon Woodcrest processors and formally announced on August 7, 2006 at WWDC.[3] A new Intel Xeon-based Xserve was announced along with the Mac Pro, completing Apple's transition from the PowerPC to x86 architecture.
+
     - 2499.99
     - false
     - 2010-03-26 20:57:04
-    - 2010-03-26 20:57:04
+    - 2011-07-27 03:09:20.406005
     - Screen_shot_2010-03-26_at_4.55.11_PM.png
     - image/png
     - 32875
-    - 2010-03-26 20:57:04
+    - 2010-03-26 20:57:00.000000
     - true
   - - 20
     - Apple TV
-    - Stream movies, TV shows, music, photos, and more to the smaller, redesigned Apple TV. All you need is a single cable to set it up.
+    - |-
+      Apple TV is a digital media receiver made and sold by Apple Inc.
+      
+      It is a small form factor network appliance designed to play IPTV digital content originating from the iTunes Store, Netflix, YouTube, Flickr, MobileMe, MLB.tv, NBA League Pass or any Mac OS X or Windows computer running iTunes onto an enhanced-definition or high-definition widescreen television.
+      
+      Apple offered a preview of the device in September 2006 and began shipping it the following March.[1] It initially shipped with a 40 GB hard disk; a 160 GB version was introduced two months later and the earlier model was ultimately discontinued.
     - 199
     - false
     - 2011-07-26 15:04:04.358331
-    - 2011-07-26 15:04:04.358331
+    - 2011-07-27 03:07:45.256132
     - apple_tv.jpg
     - image/jpeg
     - 25983
-    - 2011-07-26 15:04:03.610074
+    - 2011-07-26 15:04:00.000000
     - true
   - - 21
     - iPad2
     - |-
-      Thinner. Lighter. Faster.
-      FaceTime. Smart Covers. 10-hour battery.
+      The iPad 2 is the second generation of the iPad, a tablet computer designed, developed and marketed by Apple Inc. It serves primarily as a platform for audio-visual media including books, periodicals, movies, music, games and web content, and is available in black or white. The Foxconn China-manufactured iPad 2 has a lithium-ion polymer battery that lasts up to 10 hours, a new dual core Apple A5 processor and VGA front-facing and 720p rear-facing cameras designed for FaceTime video calling.
+      Apple unveiled the device on March 2, 2011,[7] began selling it by website and retail stores on March 11,[8] and released it in 25 other countries on March 25, including Australia, Britain and Canada.[9] Apple announced that the iPad 2 will be released in Hong Kong, South Korea, Singapore and other countries on April 29, 2011.[10]
     - 499
     - true
     - 2011-07-26 15:06:53.191597
-    - 2011-07-26 15:07:20.630113
+    - 2011-07-27 03:11:49.090986
     - ipad2.jpg
     - image/png
     - 29009
-    - 2011-07-26 15:06:52.911797
+    - 2011-07-26 15:06:00.000000
     - true
   - - 22
     - iPhone4
-    - "iPhone4 has facetime. People have been dreaming about video calling for decades. iPhone 4 makes it a reality. With the tap of a button, you can wave hello to your kids, share a smile from across the globe, or watch your best friend laugh at your stories \xE2\x80\x94 iPhone 4 to iPhone 4, iPad 2, the new iPod touch, or Mac over Wi-Fi. No other phone makes staying in touch this much fun."
+    - |-
+      The iPhone 4 is a touchscreen smartphone developed by Apple. It is the fourth generation of iPhone, and successor to the iPhone 3GS. It is particularly marketed for video calling (marketed by Apple as FaceTime), consumption of media such as books and periodicals, movies, music, and games, and for general web and e-mail access. It was announced on June 7, 2010, at the WWDC 2010 held at the Moscone Center, San Francisco,[6] and was released on June 24, 2010, in the United States, the United Kingdom, France, Germany and Japan.
+      The iPhone 4 runs Apple's iOS operating system, the same operating system as used on previous iPhones, the iPad, and the iPod Touch. It is primarily controlled by a user's fingertips on the multi-touch display, which is sensitive to fingertip contact.
     - 199
     - false
     - 2011-07-26 18:51:54.259340
-    - 2011-07-26 18:51:54.259340
+    - 2011-07-27 03:12:25.860656
     - iphone.gif
     - image/jpeg
     - 59777
-    - 2011-07-26 18:51:54.093663
+    - 2011-07-26 18:51:00.000000
     - true
   - - 23
     - iPod Classic
     - |
-      Available in quintessential silver or striking black, iPod classic catches your eye with its sleek, all-metal enclosure composed of anodized aluminum and polished stainless steel.
+      The iPod Classic (trademarked, marketed, and stylized as iPod classic and known before its sixth generation as simply iPod) is a portable media player marketed by Apple Inc. The current generation is by far the most capacious iPod, with 160GB of storage.
+      To date, there have been six generations of the iPod, as well as a spin-off (the iPod Photo) that was later re-integrated into the main iPod line. (Some sources refer to the revisions of the sixth generation as a separate "seventh generation."[1]) All generations use a 1.8-inch (46 mm) hard drive for storage. The "classic" suffix was introduced with the introduction of the sixth-generation iPod on September 5, 2007;[2] prior to this, all iPod models were simply referred to as iPods.[3] It is available in silver or black replacing the "signature iPod white".
 
     - 249
     - false
     - 2011-07-26 18:53:54.983013
-    - 2011-07-26 18:53:54.983013
+    - 2011-07-27 03:13:00.592074
     - ipod_classic.jpg
     - image/jpeg
     - 22514
-    - 2011-07-26 18:53:54.824541
+    - 2011-07-26 18:53:00.000000
     - true
   - - 24
     - Mac Mini
-    - "Ships with Lion\r\n\
-      The New Mac mini.\r\n\
-      \r\n\
-      Up to 2x faster processors and graphics.*\r\n\
-      High-speed Thunderbolt I/O. It\xE2\x80\x99s mini in size only."
+    - "The Mac Mini (trademarked as Mac mini) is a small form factor desktop computer manufactured by Apple Inc. Like earlier mini-ITX PC designs, it is uncommonly small for a desktop computer: 7.7 inches (19.7 cm) square and 1.4 inches (3.6 cm) tall. It weighs 2.7 pounds (1.22 kg). Models prior to July 2011 included a built-in optical disc drive. Models prior to 2010 used an external power supply and were smaller at 2 \xC3\x97 6.5 \xC3\x97 6.5 inches). The Mac mini is currently one of three desktop computers in the current Macintosh lineup, the other two being the iMac and Mac Pro.\r\n\
+      The Mac mini was the first recent Macintosh desktop to ship without a keyboard or mouse. In addition, there is no included display. The primary intended market for the Mac mini was for \"switchers\" (users moving from a traditional Windows PC to Mac) who would already own a compatible display, keyboard, and mouse. Other customers could easily purchase these if needed.[5] A special version of the computer is also intended for use as a server in a small network. It includes Lion Server and has a second hard drive."
     - 599
     - false
     - 2011-07-26 18:55:26.902677
-    - 2011-07-26 18:55:26.902677
+    - 2011-07-27 03:08:36.216938
     - mac_mini.png
     - image/png
     - 20067
-    - 2011-07-26 18:55:26.680810
+    - 2011-07-26 18:55:00.000000
     - true
   - - 25
     - MacBook Air
-    - air
+    - |-
+      The MacBook Air family is a line of Apple ultraportable Macintosh notebook computers.
+      The first MacBook Air was a 13.3" model, promoted as the 'World's Thinnest Notebook', that was introduced at the Macworld Conference & Expo on January 15, 2008.[4] The original MacBook Air featured a custom[5] Intel Merom CPU plus Intel GMA graphics that was updated to faster non-custom Penryn CPU and Nvidia GeForce graphics in late 2008. In addition, the hard drive capacity was increased and the micro-DVI video port was replaced with a Mini DisplayPort.[6][7] A mid-2009 refresh, introduced alongside the MacBook Pro family, featured a slightly higher-capacity battery, and a faster Penryn CPU option.[8]
     - 1599
     - false
     - 2011-07-26 18:57:02.008005
-    - 2011-07-26 18:57:02.008005
+    - 2011-07-27 03:09:58.123415
     - macbook_air.jpg
     - image/jpeg
     - 76198
-    - 2011-07-26 18:57:01.851684
+    - 2011-07-26 18:57:00.000000
     - true
 
 --- 
