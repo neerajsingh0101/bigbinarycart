@@ -28,7 +28,7 @@
     <% if current_order.products.empty? %>
       <tr><td colspan="6">Your cart is currently empty.</td></tr>
     <% else %>
-      <% current_order.line_items(:include => :product).each do |line_item| %>
+      <% current_order.line_items(:include => :product).order('id').each do |line_item| %>
         <tr>
           <td class="thumb"><%= link_to image_tag(line_item.product.picture.url(:thumbnail), :size => '60x60', :alt => line_item.product.name), line_item.product.picture.url, :class => 'single_image' %></td>
           <td class="left"><%= link_to line_item.product.name, product_path(line_item.product) %></td>

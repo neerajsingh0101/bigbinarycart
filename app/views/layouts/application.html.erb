@@ -21,10 +21,10 @@
         <div class="flash flash_<%= key %>"><%=h value %></div>
       <% end %>
     <% end %>
-      
+
     <div id="container">
       <!--[if IE]><div class="m-tl"></div><div class="m-tr"></div><![endif]-->
-      
+
       <div id="header">
         <div>
           <h1 style='float:left;'>
@@ -38,34 +38,28 @@
               <span class="topDivider">|</span>
               <%= number_to_currency current_order.price %>
             </span>
-            
+
             <%= link_to raw('<span class="shoppingBag">Shopping Cart</span>'), cart_path, :title => 'Shopping Bag' %>
           </div>
-
-          <div style='float:right;'>
-            <input type="text" name="test" value="Search.."  id="searchBox" />
-            <input type="submit" name="submit" id="searchSubmit" value="" />
-          </div>
-
         <div style='clear:both;'></div>
       </div>
     </div> <!-- end of header -->
-    
+
       <div id="content">
         <%= yield %>
       </div>
-    
+
       <!--[if IE]><div class="m-bl"></div><div class="m-br"></div><![endif]-->
     </div>
-  
+
     <div id="footer" style='background: #dce8ee;border:2px solid #c3cfd6;'>
       <div style='float:left;'>
         <%= link_to image_tag('http://www.bigbinary.com/images/bigbinary_logo_web.png'), 'http://BigBinary.com' %>
       </div>
       <div style='float:right; width: 700px;line-height: 25px;'>
-        BackboneCart is an open source application meant to enhance learning of Backbone.js. 
-        We have produced a detailed step by step video of how to create this application using Backbone.js. 
-        You will find a lot more resources about Ruby on Rails, jQuery and Backbone at 
+        BackboneCart is an open source application meant to enhance learning of Backbone.js.
+        We have produced a detailed step by step video of how to create this application using Backbone.js.
+        You will find a lot more resources about Ruby on Rails, jQuery and Backbone at
         <%= link_to 'BigBinary.com', 'http://BigBinary.com' %>
       </div>
       <div style='clear:both;'></div>
