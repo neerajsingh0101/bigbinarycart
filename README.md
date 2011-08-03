@@ -1,7 +1,7 @@
 Summary
 -------
 
-This is an application developed to ehance learning of backbone.js .
+This is an application developed to enhance learning of backbone.js .
 
 Setup
 ------------
