@@ -3,7 +3,7 @@
   <thead>
     <tr>
       <th scope="col" id="thumbnail"></th>
-      <th scope="col" id="itemName"><span class="left">Item Name</span></th>
+      <th scope="col" id="productName"><span class="left">Item Name</span></th>
       <th scope="col" id="price">Price</th>
       <th scope="col" id="quantity">Quantity</th>
       <th scope="col" id="total">Total</th>
@@ -38,7 +38,7 @@
             <span class="amount"><%= line_item.quantity %></span>
             <%= link_to '&gt;', cart_path(:product_id => line_item.product.id, :quantity => line_item.quantity + 1), :method => :put, :class => 'buttonMore' %>
           </td>
-          <td class="itemTotal"><%= number_to_currency line_item.price %></td>
+          <td class="productTotal"><%= number_to_currency line_item.price %></td>
           <td>
             <%= link_to raw('<span class="buttonRemove">Remove</span>'), cart_path(:product_id => line_item.product.id), :method => :delete, :title => 'Remove' %>
           </td>

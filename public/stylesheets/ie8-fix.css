@@ -5,7 +5,7 @@
 	background-position: 0 0;
 	height: 6px;
 	margin: -35px 0 0 -20px;
-	position: absolute; 
+	position: absolute;
 	width: 6px;
 }
 .m-tr {
@@ -13,7 +13,7 @@
 	background-position: -6px 0;
 	height: 6px;
 	margin: -35px 0 0 934px;
-	position: absolute; 
+	position: absolute;
 	width: 6px;
 }
 .m-bl {
@@ -21,7 +21,7 @@
 	background-position: 0 -6px;
 	height: 6px;
 	margin: 29px 0 0 -20px;
-	position: absolute; 
+	position: absolute;
 	width: 6px;
 }
 .m-br {
@@ -29,7 +29,7 @@
 	background-position: -6px -6px;
 	height: 6px;
 	margin: 29px 0 0 934px;
-	position: absolute; 
+	position: absolute;
 	width: 6px;
 }
 .f-tl {
@@ -37,7 +37,7 @@
 	background-position: -12px 0;
 	height: 6px;
 	margin: -30px 0 0 -20px;
-	position: absolute; 
+	position: absolute;
 	width: 6px;
 }
 .f-tr {
@@ -45,7 +45,7 @@
 	background-position: -18px 0;
 	height: 6px;
 	margin: -30px 0 0 934px;
-	position: absolute; 
+	position: absolute;
 	width: 6px;
 }
 .f-bl {
@@ -53,7 +53,7 @@
 	background-position: -12px -6px;
 	height: 6px;
 	margin: 34px 0 0 -20px;
-	position: absolute; 
+	position: absolute;
 	width: 6px;
 }
 .f-br {
@@ -61,18 +61,18 @@
 	background-position: -18px -6px;
 	height: 6px;
 	margin: 34px 0 0 934px;
-	position: absolute; 
+	position: absolute;
 	width: 6px;
 }
 
 /* Some Fixing*/
 
-#home .itemNew {
+#home .productNew {
 	margin-left: -54px;
 	position: absolute;
 }
 
-#item .itemNew {
+#item .productNew {
 	margin-left: -50px;
 	position: absolute;
 }
