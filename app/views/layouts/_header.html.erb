@@ -1,0 +1,19 @@
+  <div id="header">
+    <div>
+      <h1 style='float:left;'>
+        <%= link_to 'BackboneCart', root_url, :title => 'BackboneCart' %>
+      </h1>
+
+      <div id="details">
+        <span class="details">
+          <span class="topDivider">|</span>
+          <%= pluralize(current_order.line_items.count, 'item') %>
+          <span class="topDivider">|</span>
+          <%= number_to_currency current_order.price %>
+        </span>
+
+        <%= link_to raw('<span class="shoppingBag">Shopping Cart</span>'), cart_path, :title => 'Shopping Bag' %>
+      </div>
+    <div style='clear:both;'></div>
+  </div>
+</div> <!-- end of header -->

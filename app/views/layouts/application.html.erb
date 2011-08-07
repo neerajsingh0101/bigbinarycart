@@ -11,39 +11,24 @@
     <!--[if IE 7]><%= stylesheet_link_tag 'ie7-fix' %><![endif]-->
     <!--[if gt IE 7]><%= stylesheet_link_tag 'ie8-fix' %><![endif]-->
 
-    <%= javascript_include_tag 'vendor/json2', 'vendor/jquery-1.5', 'vendor/underscore-1.1.6', 'backbone', 'application' %>
+    <%= javascript_include_tag  'vendor/json2',
+      'vendor/jquery-1.5',
+      'vendor/underscore-1.1.6',
+      'vendor/backbone',
+      'vendor/backbone-localstorage',
+      'application' %>
+
     <%= csrf_meta_tag %>
     <link href='http://fonts.googleapis.com/css?family=Corben:700&v2' rel='stylesheet' type='text/css'>
   </head>
+
   <body class="<%= body_class %>">
-    <% if flash %>
-      <% flash.each do |key, value| %>
-        <div class="flash flash_<%= key %>"><%=h value %></div>
-      <% end %>
-    <% end %>
+    <%= render '/layouts/flash' %>
 
     <div id="container">
       <!--[if IE]><div class="m-tl"></div><div class="m-tr"></div><![endif]-->
 
-      <div id="header">
-        <div>
-          <h1 style='float:left;'>
-            <%= link_to 'BackboneCart', root_url, :title => 'BackboneCart' %>
-          </h1>
-
-          <div id="details">
-            <span class="details">
-              <span class="topDivider">|</span>
-              <%= pluralize(current_order.line_items.count, 'item') %>
-              <span class="topDivider">|</span>
-              <%= number_to_currency current_order.price %>
-            </span>
-
-            <%= link_to raw('<span class="shoppingBag">Shopping Cart</span>'), cart_path, :title => 'Shopping Bag' %>
-          </div>
-        <div style='clear:both;'></div>
-      </div>
-    </div> <!-- end of header -->
+      <%= render '/layouts/header' %>
 
       <div id="content">
         <%= yield %>
@@ -52,18 +37,8 @@
       <!--[if IE]><div class="m-bl"></div><div class="m-br"></div><![endif]-->
     </div>
 
-    <div id="footer" style='background: #dce8ee;border:2px solid #c3cfd6;'>
-      <div style='float:left;'>
-        <%= link_to image_tag('http://www.bigbinary.com/images/bigbinary_logo_web.png'), 'http://BigBinary.com' %>
-      </div>
-      <div style='float:right; width: 700px;line-height: 25px;'>
-        BackboneCart is an open source application meant to enhance learning of Backbone.js.
-        We have produced a detailed step by step video of how to create this application using Backbone.js.
-        You will find a lot more resources about Ruby on Rails, jQuery and Backbone at
-        <%= link_to 'BigBinary.com', 'http://BigBinary.com' %>
-      </div>
-      <div style='clear:both;'></div>
-    </div>
+    <%= render '/layouts/footer' %>
+    <%= render '/layouts/templates' %>
 
   </body>
 </html>
