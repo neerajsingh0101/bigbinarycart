@@ -495,14 +495,14 @@ input#searchSubmit {
 
 /** Home Page **/
 
-#items {
+#products {
 	margin: 0 auto;
 	overflow: hidden;
 	width: 960px;
 }
 
-.categories-show .item,
-.products-index .item {
+.categories-show .product,
+.products-index .product {
 	float: left;
 	display: inline;
 	height: 280px;
@@ -589,7 +589,7 @@ input#searchSubmit {
 	width: 94px;
 }
 
-#itemDetails {
+#productDetails {
 	float: left;
 	display: inline;
 	margin: 0 10px;
