@@ -13,6 +13,15 @@ $(function(){
 
   window.Products = new window.ProductList;
 
+  window.ProductView = Backbone.View.extend({
+    template: _.template($('#product-template').html()),
+    render: function(){
+      $(this.el).html(this.template(this.model.toJSON()));
+      this.$('.itemName a').text(this.model.get('name'));
+      return this;
+    }
+  });
+
   window.AppView = Backbone.View.extend({
     el: $("#products"),
 
