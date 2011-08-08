@@ -25,9 +25,9 @@ $(function(){
           pictureFileName = this.model.get("picture_file_name"),
           fullPathToPicture = '/system/pictures/'+id+'/thumbnail/'+pictureFileName;
 
-      this.$('.productName a').text(name);
+      this.$('.productName a').text(name).attr('href', '/products/'+id);
       this.$('.productPrice').text(price);
-      this.$('.product img').attr('alt', name);
+      this.$('.product img').attr('alt', name).closest('a').attr('href', '/products/'+id);
       this.$('.product img').attr('src', fullPathToPicture);
       return this;
     }

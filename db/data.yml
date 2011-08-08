@@ -1,7 +1,7 @@
 
---- 
-products: 
-  columns: 
+---
+products:
+  columns:
   - id
   - name
   - description
@@ -14,7 +14,7 @@ products:
   - picture_file_size
   - picture_updated_at
   - active
-  records: 
+  records:
   - - 16
     - iPad
     - "The iPad (pronounced /\xCB\x88a\xC9\xAAp\xC3\xA6d/ eye-pad) is a line of tablet computers designed, developed and marketed by Apple Inc. primarily as a platform for audio-visual media including books, periodicals, movies, music, games, and web content. Its size and weight falls between those of contemporary smartphones and laptop computers. The iPad runs the same operating system as the iPod Touch and iPhone\xE2\x80\x94and can run its own applications as well as iPhone applications. Without modification, the iPad will only run programs approved by Apple and distributed via the Apple App Store (with the exception of programs that run inside the iPad's web browser)."
@@ -22,8 +22,8 @@ products:
     - false
     - 2010-03-26 20:50:08
     - 2011-07-27 03:11:13.348069
-    - Screen_shot_2010-03-26_at_4.47.17_PM.png
-    - image/png
+    - Screen_shot_2010-03-26_at_4.47.17_PM.jpg
+    - image/jpg
     - 34085
     - 2010-03-26 20:50:00.000000
     - true
@@ -36,8 +36,8 @@ products:
     - false
     - 2010-03-26 20:54:57
     - 2011-07-27 03:10:30.849414
-    - Screen_shot_2010-03-26_at_4.51.11_PM.png
-    - image/png
+    - Screen_shot_2010-03-26_at_4.51.11_PM.jpg
+    - image/jpg
     - 39239
     - 2010-03-26 20:54:00.000000
     - true
@@ -51,8 +51,8 @@ products:
     - false
     - 2010-03-26 20:57:04
     - 2011-07-27 03:09:20.406005
-    - Screen_shot_2010-03-26_at_4.55.11_PM.png
-    - image/png
+    - Screen_shot_2010-03-26_at_4.55.11_PM.jpg
+    - image/jpg
     - 32875
     - 2010-03-26 20:57:00.000000
     - true
@@ -96,7 +96,7 @@ products:
     - false
     - 2011-07-26 18:51:54.259340
     - 2011-07-27 03:12:25.860656
-    - iphone.gif
+    - iphone.jpg
     - image/jpeg
     - 59777
     - 2011-07-26 18:51:00.000000
@@ -124,8 +124,8 @@ products:
     - false
     - 2011-07-26 18:55:26.902677
     - 2011-07-27 03:08:36.216938
-    - mac_mini.png
-    - image/png
+    - mac_mini.jpg
+    - image/jpg
     - 20067
     - 2011-07-26 18:55:00.000000
     - true
@@ -144,66 +144,66 @@ products:
     - 2011-07-26 18:57:00.000000
     - true
 
---- 
-orders: 
-  columns: 
+---
+orders:
+  columns:
   - id
   - user_id
   - order_number
   - created_at
   - updated_at
-  records: 
+  records:
   - - 29
-    - 
-    - 
+    -
+    -
     - 2011-07-26 13:38:29.975327
     - 2011-07-26 13:38:29.975327
   - - 30
-    - 
-    - 
+    -
+    -
     - 2011-07-26 14:52:17.455384
     - 2011-07-26 14:52:17.455384
   - - 31
-    - 
-    - 
+    -
+    -
     - 2011-07-26 17:36:34.431191
     - 2011-07-26 17:36:34.431191
   - - 32
-    - 
-    - 
+    -
+    -
     - 2011-07-26 17:43:55.268886
     - 2011-07-26 17:43:55.268886
   - - 33
-    - 
-    - 
+    -
+    -
     - 2011-07-26 18:41:28.691064
     - 2011-07-26 18:41:28.691064
   - - 34
-    - 
-    - 
+    -
+    -
     - 2011-07-26 18:43:44.758536
     - 2011-07-26 18:43:44.758536
   - - 38
-    - 
-    - 
+    -
+    -
     - 2011-07-26 20:00:58.817916
     - 2011-07-26 20:00:58.817916
   - - 41
-    - 
-    - 
+    -
+    -
     - 2011-07-27 03:05:58.259767
     - 2011-07-27 03:05:58.259767
 
---- 
-line_items: 
-  columns: 
+---
+line_items:
+  columns:
   - id
   - order_id
   - product_id
   - quantity
   - created_at
   - updated_at
-  records: 
+  records:
   - - 2
     - 30
     - 21
