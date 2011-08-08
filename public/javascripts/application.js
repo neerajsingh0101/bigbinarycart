@@ -19,10 +19,16 @@ $(function(){
     render: function(){
 
       $(this.el).html(this.template(this.model.toJSON()));
-      var name = this.model.get("name");
-      console.log(name);
-      console.log(this.model.toJSON());
+      var name = this.model.get("name"),
+          id   = this.model.get("id"),
+          price = this.model.get("price"),
+          pictureFileName = this.model.get("picture_file_name"),
+          fullPathToPicture = '/system/pictures/'+id+'/thumbnail/'+pictureFileName;
+
       this.$('.productName a').text(name);
+      this.$('.productPrice').text(price);
+      this.$('.product img').attr('alt', name);
+      this.$('.product img').attr('src', fullPathToPicture);
       return this;
     }
   });
