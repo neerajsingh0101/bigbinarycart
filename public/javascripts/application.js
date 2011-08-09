@@ -8,7 +8,7 @@ $(function(){
 
   window.ProductList = Backbone.Collection.extend({
     model: Product,
-    url: '/products.json'
+    url: '/products'
   });
 
   window.Products = new window.ProductList;
@@ -19,6 +19,7 @@ $(function(){
     render: function(){
 
       $(this.el).html(this.template(this.model.toJSON()));
+
       var name = this.model.get("name"),
           id   = this.model.get("id"),
           price = this.model.get("price"),
