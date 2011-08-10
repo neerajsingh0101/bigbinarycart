@@ -2,7 +2,7 @@ $(function(){
 
   window.Product = Backbone.Model.extend({
     defaults: { name: 'name missing' },
-    urlRoot: '/user'
+    urlRoot: '/product'
   });
 
   window.ProductList = Backbone.Collection.extend({
@@ -25,30 +25,24 @@ $(function(){
 
   window.ProductViewForShow = Backbone.View.extend({
     el: $('#main'),
-
     initialize: function(){
       _.bindAll(this, 'render');
       this.render();
     },
-
     render: function(){
       self.el.append($('Hello world'));
     }
-
   });
 
   window.AppView = Backbone.View.extend({
     el: $('#products'),
-
     //events: {
       //"click .product": "showProduct"
     //},
-
     initialize: function(){
       _.bindAll(this, 'render');
       this.render();
     },
-
     render: function(){
       var self = this;
       this.collection.each(function(product){
@@ -56,21 +50,7 @@ $(function(){
         self.el.append(view.render().el);
       });
     }
-
   });
-
-
-
-  var WorkspaceRouter = Backbone.Router.extend({
-    routes: {
-      "products/:id": "showProduct"
-    },
-    showProduct: function(){
-      alert('showing product');
-    }
-  });
-  new WorkspaceRouter();
-  Backbone.history.start({pushState: true});
 
   var products = new ProductList();
   products.fetch({
