@@ -36,9 +36,9 @@ $(function(){
 
   window.AppView = Backbone.View.extend({
     el: $('#products'),
-    //events: {
-      //"click .product": "showProduct"
-    //},
+    events: {
+      "click .product": "showProduct"
+    },
     initialize: function(){
       _.bindAll(this, 'render');
       this.render();
@@ -49,6 +49,11 @@ $(function(){
         var view = new ProductViewForListing({model: product});
         self.el.append(view.render().el);
       });
+    },
+    showProduct: function(e){
+                   console.log(e);
+      var href = $(e.target).closest('.product').find('a').attr('href');
+      alert(href);
     }
   });
 
