@@ -9,16 +9,15 @@ $(function(){
     url: '/products.json'
   });
 
-
   window.ProductViewForListing = Backbone.View.extend({
     initialize: function() {
-      this.template = _.template("<a href='products/<%= id %>'><img alt='<%= name %>' class='productImage' height='190' src='/system/pictures/<%= id %>/thumbnail/<%= picture_file_name %>' width='190' /></a> <p class='productName'> <%= name %><a href='/products/<%= id %>'></a></p><p class='productPrice'><%= price %></p>");
-
+      this.template = $('#productTmplForListing').template(),
       _.bindAll(this, 'render');
     },
     className: 'product',
     render: function(){
-      $(this.el).html(this.template(this.model.toJSON()));
+      var fragment = $.tmpl(this.template, this.model.toJSON());
+      $(this.el).html(fragment);
       return this;
     }
   });
@@ -43,4 +42,5 @@ $(function(){
       new productsListView({ el: $("#products"), collection: products });
     }
   });
+
 });

@@ -1,12 +1,17 @@
-<script type="text/template" id="product-view-for-list-template">
-    <a href="">
-      <img alt="" class="productImage" height="190" src="" width="190" />
+<script type="text/x-jquery-tmpl" id="productTmplForListing">
+  <a href="/products/${id}">
+    <img alt="${name}" class="productImage" height="190" src="/system/pictures/${id}/thumbnail/${picture_file_name}" width="190" />
     </a>
     <p class="productName">
-      <a href=""></a>
+      <a href="/products/${id}">
+        ${name}
+      </a>
     </p>
-    <p class="productPrice"></p>
-</script>
+    <p class="productPrice">
+      ${price}
+    </p>
+  </script>
+
 
 <script type="text/template" id="product-view-for-show-template">
   <div class="gallery">
