@@ -13,23 +13,16 @@ $(function(){
 
   window.Products = new window.ProductList;
 
+
   window.ProductViewForList = Backbone.View.extend({
+    initialize: function() {
+      this.template = _.template("<a href='products/<%= id %>'><img alt='<%= name %>' class='productImage' height='190' src='/system/pictures/<%= id %>/thumbnail/<%= picture_file_name %>' width='190' /></a> <p class='productName'> <%= name %><a href='/products/<%= id %>'></a></p><p class='productPrice'><%= price %></p>");
+
+    },
     template: _.template($('#product-view-for-list-template').html()),
     className: 'product',
     render: function(){
-
       $(this.el).html(this.template(this.model.toJSON()));
-
-      var name = this.model.get("name"),
-          id   = this.model.get("id"),
-          price = this.model.get("price"),
-          pictureFileName = this.model.get("picture_file_name"),
-          fullPathToPicture = '/system/pictures/'+id+'/thumbnail/'+pictureFileName;
-
-      this.$('.productName a').text(name).attr('href', '/products/'+id);
-      this.$('.productPrice').text(price);
-      this.$('img').attr('alt', name).closest('a').attr('href', '/products/'+id);
-      this.$('img').attr('src', fullPathToPicture);
       return this;
     }
   });
