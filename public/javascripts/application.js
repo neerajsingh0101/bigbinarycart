@@ -37,16 +37,20 @@ $(function(){
   window.AppView = Backbone.View.extend({
     el: $("#products"),
 
+    events: {
+      "click #products-list .product a": "showProduct"
+    },
+
     initialize: function(){
-      //Products.create({name: 'iphone4'});
       Products.bind('reset', this.addAll, this);
       Products.fetch();
     },
 
+    showProduct: function(product) {
+      return false;
+    },
+
     addOne: function(product){
-      console.log('addOne is called');
-      console.log(product);
-      console.log(product.toJSON());
       var view = new ProductView({model: product});
       this.$('#products-list').append(view.render().el);
     },
