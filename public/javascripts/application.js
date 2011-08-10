@@ -8,13 +8,13 @@ $(function(){
 
   window.ProductList = Backbone.Collection.extend({
     model: Product,
-    url: '/products'
+    url: '/products.json'
   });
 
   window.Products = new window.ProductList;
 
-  window.ProductView = Backbone.View.extend({
-    template: _.template($('#product-template').html()),
+  window.ProductViewForList = Backbone.View.extend({
+    template: _.template($('#product-view-for-list-template').html()),
 
     render: function(){
 
@@ -34,6 +34,15 @@ $(function(){
     }
   });
 
+  window.ProductViewForShow = Backbone.View.extend({
+    template: _.template($('#product-view-for-show-template').html()),
+
+    render: function(){
+      $(this.el).html(this.template(this.model.toJSON()));
+      return this;
+    }
+  });
+
   window.AppView = Backbone.View.extend({
     el: $("#products"),
 
@@ -47,17 +56,18 @@ $(function(){
     },
 
     showProduct: function(product) {
+      var view = new ProductViewForShow({model: product});
+      this.$('#content').html(view.render().el);
       return false;
     },
 
     addOne: function(product){
-      var view = new ProductView({model: product});
-      this.$('#products-list').append(view.render().el);
+      var view = new ProductViewForList({model: product});
+      var e = view.render().el;
+      this.$('#products-list').append(e);
     },
 
     addAll: function(){
-      console.log('addAll is called');
-      console.log(this);
       Products.each(this.addOne);
     }
   });

@@ -1,4 +1,4 @@
-<script type="text/template" id="product-template">
+<script type="text/template" id="product-view-for-list-template">
   <div class="product">
     <a href="">
       <img alt="" class="productImage" height="190" src="" width="190" />
@@ -7,5 +7,29 @@
       <a href=""></a>
     </p>
     <p class="productPrice"></p>
+  </div>
+</script>
+
+<script type="text/template" id="product-view-for-show-template">
+  <div class="gallery">
+    <div id='productImage'>
+      <div id='slideshow' class='pics'>
+        <a href="/system/pictures/20/original/apple_tv.jpg" class="single_image">
+          <img alt="Apple TV" height="420" src="/system/pictures/20/original/apple_tv.jpg" width="420" />
+        </a>
+      </div>
+    </div>
+    <div id="productDetails">
+  		<h2>Apple TV</h2>
+  		<p class="productPrice">$199.00</p>
+      <div class='productDesc"></div>
+      <p>
+        <a href="/cart?product_id=20" data-method="post" rel="nofollow">
+          <span class="buttonAddToShoppingBag">
+            Add to Shopping Cart
+          </span>
+        </a>
+      </p>
+  	</div>
   </div>
 </script>
