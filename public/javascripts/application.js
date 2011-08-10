@@ -15,7 +15,7 @@ $(function(){
 
   window.ProductViewForList = Backbone.View.extend({
     template: _.template($('#product-view-for-list-template').html()),
-
+    className: 'product',
     render: function(){
 
       $(this.el).html(this.template(this.model.toJSON()));
@@ -28,8 +28,8 @@ $(function(){
 
       this.$('.productName a').text(name).attr('href', '/products/'+id);
       this.$('.productPrice').text(price);
-      this.$('.product img').attr('alt', name).closest('a').attr('href', '/products/'+id);
-      this.$('.product img').attr('src', fullPathToPicture);
+      this.$('img').attr('alt', name).closest('a').attr('href', '/products/'+id);
+      this.$('img').attr('src', fullPathToPicture);
       return this;
     }
   });
