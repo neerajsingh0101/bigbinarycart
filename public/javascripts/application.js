@@ -22,24 +22,59 @@ $(function(){
     }
   });
 
-  window.productsListView = Backbone.View.extend({
-    render: function(){
-      var self = this;
-      this.collection.each(function(element){
-        var view = new ProductViewForListing({model: element});
-        self.el.append(view.render().el);
-      });
-    },
+  window.ProductViewForShow = Backbone.View.extend({
+    el: $('#main'),
+
     initialize: function(){
       _.bindAll(this, 'render');
       this.render();
+    },
+
+    render: function(){
+      self.el.append($('Hello world'));
+    }
+
+  });
+
+  window.productsListView = Backbone.View.extend({
+    el: $('#products'),
+
+    //events: {
+      //"click .product": "showProduct"
+    //},
+
+    initialize: function(){
+      _.bindAll(this, 'render');
+      this.render();
+    },
+
+    render: function(){
+      var self = this;
+      this.collection.each(function(product){
+        var view = new ProductViewForListing({model: product});
+        self.el.append(view.render().el);
+      });
+    }
+
+  });
+
+
+
+  var WorkspaceRouter = Backbone.Router.extend({
+    routes: {
+      "products/:id": "showProduct"
+    },
+    showProduct: function(){
+      alert('showing product');
     }
   });
+  new WorkspaceRouter();
+  Backbone.history.start({pushState: true});
 
   var products = new ProductList();
   products.fetch({
     success: function() {
-      new productsListView({ el: $("#products"), collection: products });
+      new productsListView({ collection: products });
     }
   });
 
