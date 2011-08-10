@@ -1,5 +1,5 @@
 <script type="text/x-jquery-tmpl" id="productTmplForListing">
-  <a href="/products/${id}.json">
+  <a href="/products/${id}.json" data-id='${id}'>
     <img alt="${name}" class="productImage" height="190" src="/system/pictures/${id}/thumbnail/${picture_file_name}" width="190" />
   </a>
   <p class="productName">
@@ -13,21 +13,21 @@
 </script>
 
 
-<script type="text/template" id="product-view-for-show-template">
+<script type="text/x-jquery-tmpl" id="productTmplForShow">
   <div class="gallery">
     <div id='productImage'>
       <div id='slideshow' class='pics'>
-        <a href="/system/pictures/20/original/apple_tv.jpg" class="single_image">
-          <img alt="Apple TV" height="420" src="/system/pictures/20/original/apple_tv.jpg" width="420" />
+        <a href="/system/pictures/${id}/original/${picture_file_name}" class="single_image">
+          <img alt="${name}" height="420" src="/system/pictures/${id}/original/${picture_file_name}" width="420" />
         </a>
       </div>
     </div>
     <div id="productDetails">
-  		<h2>Apple TV</h2>
-  		<p class="productPrice">$199.00</p>
+      <h2>${name}</h2>
+      <p class="productPrice">${price}</p>
       <div class='productDesc"></div>
       <p>
-        <a href="/cart?product_id=20" data-method="post" rel="nofollow">
+        <a href="/cart?product_id=${id}" data-method="post" rel="nofollow">
           <span class="buttonAddToShoppingBag">
             Add to Shopping Cart
           </span>

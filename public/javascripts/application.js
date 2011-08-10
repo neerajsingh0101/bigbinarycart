@@ -11,8 +11,8 @@ $(function(){
   });
 
   window.ProductViewForListing = Backbone.View.extend({
+    template: $('#productTmplForListing').template(),
     initialize: function() {
-      this.template = $('#productTmplForListing').template(),
       _.bindAll(this, 'render');
     },
     className: 'product',
@@ -24,12 +24,14 @@ $(function(){
   });
 
   window.ProductViewForShow = Backbone.View.extend({
+    template: $('#productTmplForShow').template(),
     initialize: function(){
       _.bindAll(this, 'render');
       this.render();
     },
     render: function(){
-      $(this.el).html('hello world');
+      var fragment = $.tmpl(this.template, this.model.toJSON());
+      $(this.el).html(fragment);
       return this;
     }
   });
@@ -51,18 +53,19 @@ $(function(){
       });
     },
     showProduct: function(e){
-      var href = $(e.target).closest('.product').find('a').attr('href');
-      var product = new Product({id: 20});
-      var self = this;
+      var id = $(e.target).closest('.product').find('a:first').attr('data-id'),
+          product = new Product({id: id}),
+          self = this;
+
       product.fetch({
         success: function(){ console.log(product);
-                   var mainElement = self.el.closest('#main');
+                   var mainElement = self.el.closest('#main'),
+                       view = new ProductViewForShow({model: product});
                    mainElement.find('#products').html('');
-                   var view = new ProductViewForShow({model: product});
                    self.el.append(view.render().el);
                  },
         error: function(){ alert('error getting product details'); }
-      })
+      });
       return false;
     }
   });
