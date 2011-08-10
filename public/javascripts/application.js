@@ -2,24 +2,23 @@ $(function(){
 
   window.Product = Backbone.Model.extend({
     defaults: {name: 'name missing'},
-
-    initialize: function(){}
+  initialize: function(){
+  }
   });
 
   window.ProductList = Backbone.Collection.extend({
+    el: "#products",
     model: Product,
     url: '/products.json'
   });
 
-  window.Products = new window.ProductList;
 
-
-  window.ProductViewForList = Backbone.View.extend({
+  window.ProductViewForShow = Backbone.View.extend({
     initialize: function() {
-      this.template = _.template("<a href='products/<%= id %>'><img alt='<%= name %>' class='productImage' height='190' src='/system/pictures/<%= id %>/thumbnail/<%= picture_file_name %>' width='190' /></a> <p class='productName'> <%= name %><a href='/products/<%= id %>'></a></p><p class='productPrice'><%= price %></p>");
+                  this.template = _.template("<a href='products/<%= id %>'><img alt='<%= name %>' class='productImage' height='190' src='/system/pictures/<%= id %>/thumbnail/<%= picture_file_name %>' width='190' /></a> <p class='productName'> <%= name %><a href='/products/<%= id %>'></a></p><p class='productPrice'><%= price %></p>");
 
-    },
-    template: _.template($('#product-view-for-list-template').html()),
+                  _.bindAll(this, 'render');
+                },
     className: 'product',
     render: function(){
       $(this.el).html(this.template(this.model.toJSON()));
@@ -27,44 +26,26 @@ $(function(){
     }
   });
 
-  window.ProductViewForShow = Backbone.View.extend({
-    template: _.template($('#product-view-for-show-template').html()),
-
-    render: function(){
-      $(this.el).html(this.template(this.model.toJSON()));
-      return this;
-    }
-  });
-
   window.AppView = Backbone.View.extend({
-    el: $("#products"),
-
-    events: {
-      "click #products-list .product a": "showProduct"
+    tagName: 'div',
+    id: "products",
+    render: function(){
+      var self = this;
+      this.collection.each(function(element){
+        var view = new ProductViewForShow({model: element});
+        self.el.append(view.render().el);
+      });
     },
-
     initialize: function(){
-      Products.bind('reset', this.addAll, this);
-      Products.fetch();
-    },
-
-    showProduct: function(product) {
-      var view = new ProductViewForShow({model: product});
-      this.$('#content').html(view.render().el);
-      return false;
-    },
-
-    addOne: function(product){
-      var view = new ProductViewForList({model: product});
-      var e = view.render().el;
-      this.$('#products-list').append(e);
-    },
-
-    addAll: function(){
-      Products.each(this.addOne);
-    }
+                  _.bindAll(this, 'render');
+                  this.render();
+                }
   });
 
-  window.app = new AppView;
-
+  var products = new ProductList();
+  products.fetch({
+    success: function() {
+        new AppView({ el: $("#products"), collection: products });
+    }
+  });
 });
