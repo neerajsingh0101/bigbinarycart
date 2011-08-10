@@ -2,7 +2,7 @@ $(function(){
 
   window.Product = Backbone.Model.extend({
     defaults: { name: 'name missing' },
-    urlRoot: '/product'
+    urlRoot: '/products'
   });
 
   window.ProductList = Backbone.Collection.extend({
@@ -24,13 +24,13 @@ $(function(){
   });
 
   window.ProductViewForShow = Backbone.View.extend({
-    el: $('#main'),
     initialize: function(){
       _.bindAll(this, 'render');
       this.render();
     },
     render: function(){
-      self.el.append($('Hello world'));
+      $(this.el).html('hello world');
+      return this;
     }
   });
 
@@ -40,7 +40,7 @@ $(function(){
       "click .product": "showProduct"
     },
     initialize: function(){
-      _.bindAll(this, 'render');
+      _.bindAll(this, 'render', 'showProduct');
       this.render();
     },
     render: function(){
@@ -52,7 +52,18 @@ $(function(){
     },
     showProduct: function(e){
       var href = $(e.target).closest('.product').find('a').attr('href');
-      alert(href);
+      var product = new Product({id: 20});
+      var self = this;
+      product.fetch({
+        success: function(){ console.log(product);
+                   var mainElement = self.el.closest('#main');
+                   mainElement.find('#products').html('');
+                   var view = new ProductViewForShow({model: product});
+                   self.el.append(view.render().el);
+                 },
+        error: function(){ alert('error getting product details'); }
+      })
+      return false;
     }
   });
 
