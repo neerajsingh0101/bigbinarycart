@@ -1,7 +1,8 @@
 $(function(){
 
   window.Product = Backbone.Model.extend({
-    defaults: { name: 'name missing' }
+    defaults: { name: 'name missing' },
+    urlRoot: '/user'
   });
 
   window.ProductList = Backbone.Collection.extend({
@@ -36,7 +37,7 @@ $(function(){
 
   });
 
-  window.productsListView = Backbone.View.extend({
+  window.AppView = Backbone.View.extend({
     el: $('#products'),
 
     //events: {
@@ -74,7 +75,7 @@ $(function(){
   var products = new ProductList();
   products.fetch({
     success: function() {
-      new productsListView({ collection: products });
+      new AppView({ collection: products });
     }
   });
 
