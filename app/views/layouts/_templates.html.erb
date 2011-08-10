@@ -1,16 +1,16 @@
 <script type="text/x-jquery-tmpl" id="productTmplForListing">
   <a href="/products/${id}.json">
     <img alt="${name}" class="productImage" height="190" src="/system/pictures/${id}/thumbnail/${picture_file_name}" width="190" />
+  </a>
+  <p class="productName">
+    <a href="/products/${id}.json">
+      ${name}
     </a>
-    <p class="productName">
-      <a href="/products/${id}.json">
-        ${name}
-      </a>
-    </p>
-    <p class="productPrice">
-      ${price}
-    </p>
-  </script>
+  </p>
+  <p class="productPrice">
+    ${price}
+  </p>
+</script>
 
 
 <script type="text/template" id="product-view-for-show-template">

@@ -51,7 +51,6 @@ $(function(){
       });
     },
     showProduct: function(e){
-                   console.log(e);
       var href = $(e.target).closest('.product').find('a').attr('href');
       alert(href);
     }
