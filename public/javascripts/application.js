@@ -1,13 +1,10 @@
 $(function(){
 
   window.Product = Backbone.Model.extend({
-    defaults: {name: 'name missing'},
-  initialize: function(){
-  }
+    defaults: {name: 'name missing'}
   });
 
   window.ProductList = Backbone.Collection.extend({
-    el: "#products",
     model: Product,
     url: '/products.json'
   });
@@ -27,8 +24,6 @@ $(function(){
   });
 
   window.AppView = Backbone.View.extend({
-    tagName: 'div',
-    id: "products",
     render: function(){
       var self = this;
       this.collection.each(function(element){
@@ -37,15 +32,15 @@ $(function(){
       });
     },
     initialize: function(){
-                  _.bindAll(this, 'render');
-                  this.render();
-                }
+      _.bindAll(this, 'render');
+      this.render();
+    }
   });
 
   var products = new ProductList();
   products.fetch({
     success: function() {
-        new AppView({ el: $("#products"), collection: products });
+      new AppView({ el: $("#products"), collection: products });
     }
   });
 });
