@@ -38,9 +38,6 @@ $(function(){
 
   window.AppView = Backbone.View.extend({
     el: $('#products'),
-    events: {
-      "click .product_": "showProduct"
-    },
     initialize: function(){
       _.bindAll(this, 'render', 'showProduct');
       this.render();
@@ -53,11 +50,9 @@ $(function(){
       });
     },
     showProduct: function(id){
-          var product = new Product({id: id}),
-          self = this;
-
+      var product = new Product({id: id}), self = this;
       product.fetch({
-        success: function(){ console.log(product);
+        success: function(){
           var mainElement = self.el.closest('#main'),
           view = new ProductViewForShow({model: product});
           mainElement.find('#products').html('');
@@ -78,17 +73,14 @@ $(function(){
     },
     showProduct: function(id){
       window.App.appView.showProduct(id);
-      return false;
     }
   });
-
 
   window.App = {
     appView: undefined,
 
     init: function() {
-      var products = new ProductList();
-      var self = this;
+      var products = new ProductList(), self = this;
       products.fetch({
         success: function() {
           self.appView = new AppView({ collection: products });
