@@ -5,7 +5,7 @@ $(function(){
     urlRoot: '/products'
   });
 
-  window.ProductList = Backbone.Collection.extend({
+  window.ProductsList = Backbone.Collection.extend({
     model: Product,
     url: '/products.json'
   });
@@ -43,10 +43,12 @@ $(function(){
       this.render();
     },
     render: function(){
+      var targetElement = $('#products');
       var self = this;
       this.collection.each(function(product){
-        var view = new ProductViewForListing({model: product});
-        self.el.append(view.render().el);
+        var view = new ProductViewForListing({model: product}),
+            fragment = view.render().el;
+        self.el.append(fragment);
       });
     },
     showProduct: function(id){
@@ -64,33 +66,30 @@ $(function(){
     }
   });
 
+  window.products = new ProductsList();
+
   window.AppRouter = Backbone.Router.extend({
-    initialize: function(view){
-      var appView = view;
+    initialize: function(){
     },
-    routes : {
+    routes: {
+      '': 'home',
       'products/:id': 'showProduct'
+    },
+    home: function(){
+      var self = this;
+      window.products.fetch({
+        success: function(){
+          self.appView = new AppView({ collection: window.products });
+          self.appView.render();
+        }
+      });
     },
     showProduct: function(id){
       window.App.appView.showProduct(id);
     }
   });
 
-  window.App = {
-    appView: undefined,
-
-    init: function() {
-      var products = new ProductList(), self = this;
-      products.fetch({
-        success: function() {
-          self.appView = new AppView({ collection: products });
-          new AppRouter();
-          Backbone.history.start(self.appView);
-        }
-      });
-    }
-  };
-
-  window.App.init();
+  window.App = new window.AppRouter();
+  Backbone.history.start({pushState: false});
 
 });
