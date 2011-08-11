@@ -54,7 +54,7 @@ $(function(){
       product.fetch({
         success: function(){
           var mainElement = self.el.closest('#main'),
-          view = new ProductViewForShow({model: product});
+              view = new ProductViewForShow({model: product});
           mainElement.find('#products').html('');
           self.el.append(view.render().el);
         },
@@ -84,7 +84,7 @@ $(function(){
       products.fetch({
         success: function() {
           self.appView = new AppView({ collection: products });
-          this.router = new AppRouter();
+          new AppRouter();
           Backbone.history.start(self.appView);
         }
       });
