@@ -7,7 +7,7 @@ $(function(){
 
   window.ProductsList = Backbone.Collection.extend({
     model: Product,
-    url: '/products.json'
+    url: '/products'
   });
 
   window.ProductViewForListing = Backbone.View.extend({
