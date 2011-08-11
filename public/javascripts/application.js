@@ -39,7 +39,7 @@ $(function(){
   window.AppView = Backbone.View.extend({
     el: $('#products'),
     events: {
-      "click .product": "showProduct"
+      "click .product_": "showProduct"
     },
     initialize: function(){
       _.bindAll(this, 'render', 'showProduct');
@@ -52,9 +52,8 @@ $(function(){
         self.el.append(view.render().el);
       });
     },
-    showProduct: function(e){
-      var id = $(e.target).closest('.product').find('a:first').attr('data-id'),
-          product = new Product({id: id}),
+    showProduct: function(id){
+          var product = new Product({id: id}),
           self = this;
 
       product.fetch({
@@ -71,31 +70,35 @@ $(function(){
   });
 
   window.AppRouter = Backbone.Router.extend({
-    routes : {
-      'products/:id': 'trapShow'
+    initialize: function(view){
+      var appView = view;
     },
-    trapShow: function(){
-      alert('trapped show');
+    routes : {
+      'products/:id': 'showProduct'
+    },
+    showProduct: function(id){
+      window.App.appView.showProduct(id);
+      return false;
     }
   });
 
 
   window.App = {
+    appView: undefined,
+
     init: function() {
       var products = new ProductList();
+      var self = this;
       products.fetch({
         success: function() {
-          new AppView({ collection: products });
+          self.appView = new AppView({ collection: products });
+          this.router = new AppRouter();
+          Backbone.history.start(self.appView);
         }
       });
-
-      this.router = new AppRouter();
-      Backbone.history.start();
     }
   };
 
-
   window.App.init();
-
 
 });
