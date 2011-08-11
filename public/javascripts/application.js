@@ -59,22 +59,43 @@ $(function(){
 
       product.fetch({
         success: function(){ console.log(product);
-                   var mainElement = self.el.closest('#main'),
-                       view = new ProductViewForShow({model: product});
-                   mainElement.find('#products').html('');
-                   self.el.append(view.render().el);
-                 },
+          var mainElement = self.el.closest('#main'),
+          view = new ProductViewForShow({model: product});
+          mainElement.find('#products').html('');
+          self.el.append(view.render().el);
+        },
         error: function(){ alert('error getting product details'); }
       });
       return false;
     }
   });
 
-  var products = new ProductList();
-  products.fetch({
-    success: function() {
-      new AppView({ collection: products });
+  window.AppRouter = Backbone.Router.extend({
+    routes : {
+      'products/:id': 'trapShow'
+    },
+    trapShow: function(){
+      alert('trapped show');
     }
   });
+
+
+  window.App = {
+    init: function() {
+      var products = new ProductList();
+      products.fetch({
+        success: function() {
+          new AppView({ collection: products });
+        }
+      });
+
+      this.router = new AppRouter();
+      Backbone.history.start();
+    }
+  };
+
+
+  window.App.init();
+
 
 });
