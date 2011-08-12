@@ -34,23 +34,23 @@
 
 
 <script type="text/x-jquery-tmpl" id="productTmplForShow">
-    <div id='productImage'>
-      <div id='slideshow' class='pics'>
-        <a href="/system/pictures/${id}/original/${picture_file_name}" class="single_image">
-          <img alt="${name}" height="420" src="/system/pictures/${id}/original/${picture_file_name}" width="420" />
-        </a>
-      </div>
+  <div id='productImage'>
+    <div id='slideshow' class='pics'>
+      <a href="/system/pictures/${id}/original/${picture_file_name}" class="single_image">
+        <img alt="${name}" height="420" src="/system/pictures/${id}/original/${picture_file_name}" width="420" />
+      </a>
     </div>
-    <div id="productDetails">
-      <h2>${name}</h2>
-      <p class="productPrice">$${price}</p>
-      <div class='productDesc"></div>
-      <p>
-        <a href="/cart?product_id=${id}" data-method="post" rel="nofollow">
-          <span class="buttonAddToShoppingBag">
-            Add to Shopping Cart
-          </span>
-        </a>
-      </p>
-  	</div>
+  </div>
+  <div id="productDetails">
+    <h2>${name}</h2>
+    <p class="productPrice">$${price}</p>
+    <div class='productDesc"></div>
+    <p>
+      <a href="/cart?product_id=${id}" data-method="post" rel="nofollow">
+        <span class="buttonAddToShoppingBag">
+          Add to Shopping Cart
+        </span>
+      </a>
+    </p>
+  </div>
 </script>

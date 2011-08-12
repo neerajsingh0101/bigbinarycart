@@ -46,6 +46,10 @@ $(function(){
     render: function(){
       var fragment = $.tmpl(this.template);
       $(this.el).html(fragment)
+
+      $('.gallery').remove();
+      $('#header').remove();
+
       return this;
     }
   });
@@ -56,9 +60,6 @@ $(function(){
       _.bindAll(this, 'render', 'showProduct');
     },
     render: function(){
-
-      $('.gallery').remove();
-      $('#header').remove();
       var _view = new HeaderViewForPage({}), _fragment = _view.render().el;
       $('#container').prepend(_fragment);
 
