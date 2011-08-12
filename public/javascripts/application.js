@@ -25,6 +25,7 @@ $(function(){
 
   window.ProductViewForShow = Backbone.View.extend({
     template: $('#productTmplForShow').template(),
+    className: 'gallery',
     initialize: function(){
       _.bindAll(this, 'render');
       this.render();
@@ -36,13 +37,31 @@ $(function(){
     }
   });
 
+  window.HeaderViewForPage = Backbone.View.extend({
+    template: $('#headerTmplForPage').template(),
+    id: 'header',
+    initialize: function(){
+      _.bindAll(this, 'render');
+    },
+    render: function(){
+      var fragment = $.tmpl(this.template);
+      $(this.el).html(fragment)
+      return this;
+    }
+  });
+
   window.AppView = Backbone.View.extend({
     el: $('#products'),
     initialize: function(){
       _.bindAll(this, 'render', 'showProduct');
-      this.render();
     },
     render: function(){
+
+      $('.gallery').remove();
+      $('#header').remove();
+      var _view = new HeaderViewForPage({}), _fragment = _view.render().el;
+      $('#container').prepend(_fragment);
+
       var targetElement = $('#products');
       var self = this;
       this.collection.each(function(product){

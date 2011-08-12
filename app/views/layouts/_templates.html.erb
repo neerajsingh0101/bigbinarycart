@@ -12,9 +12,28 @@
   </p>
 </script>
 
+<script type='text/x-jquery-tmp' id='headerTmplForPage'>
+  <div>
+    <h1>
+      <a href="#" title="BackboneCart">BackboneCart</a>
+    </h1>
+
+    <div id="details">
+      <span class="details">
+        <span class="topDivider">|</span>
+        0 items
+        <span class="topDivider">|</span>
+        $0.00
+      </span>
+
+      <a href="/cart" title="Shopping Cart"><span class="shoppingBag">Shopping Cart</span></a>
+    </div>
+    <div class='clear'></div>
+  </div>
+</script>
+
 
 <script type="text/x-jquery-tmpl" id="productTmplForShow">
-  <div class="gallery">
     <div id='productImage'>
       <div id='slideshow' class='pics'>
         <a href="/system/pictures/${id}/original/${picture_file_name}" class="single_image">
@@ -34,5 +53,4 @@
         </a>
       </p>
   	</div>
-  </div>
 </script>

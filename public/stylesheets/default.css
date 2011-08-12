@@ -757,4 +757,5 @@ body.products-index .productNew {margin-left: -53px;}
 
 #header h1 {
   font-family: 'Corben', serif;
+  float:left;
 }
