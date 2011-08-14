@@ -55,10 +55,13 @@ $(function(){
     initialize: function(){
       _.bindAll(this, 'render', 'showProduct');
     },
-    render: function(){
+    renderHeader: function(){
       $('#header').remove();
       var _view = new HeaderViewForPage({}), _fragment = _view.render().el;
       $('#container').prepend(_fragment);
+    },
+    render: function(){
+      this.renderHeader();
 
       $('.gallery').remove();
       var targetElement = $('#products');
@@ -70,6 +73,8 @@ $(function(){
       });
     },
     showProduct: function(id){
+      this.renderHeader();
+
       var product = new Product({id: id}), self = this;
       product.fetch({
         success: function(){
