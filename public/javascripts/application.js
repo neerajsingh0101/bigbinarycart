@@ -45,9 +45,7 @@ $(function(){
     },
     render: function(){
       var fragment = $.tmpl(this.template);
-      $(this.el).html(fragment)
-
-
+      $(this.el).html(fragment);
       return this;
     }
   });
@@ -105,7 +103,8 @@ $(function(){
       });
     },
     showProduct: function(id){
-      window.App.appView.showProduct(id);
+      self.appView = new AppView({ collection: {} });
+      self.appView.showProduct(id);
     }
   });
 
