@@ -39,7 +39,8 @@ $(function(){
       "click #productDetails a": "addToCart"
     },
     addToCart: function(){
-      alert('adding to cart');
+      window.App.navigate('cart', true);
+      return false;
     }
   });
 
@@ -102,7 +103,8 @@ $(function(){
     },
     routes: {
       '': 'home',
-      'products/:id': 'showProduct'
+      'products/:id': 'showProduct',
+      'cart': 'showCart'
     },
     home: function(){
       var self = this;
@@ -116,6 +118,9 @@ $(function(){
     showProduct: function(id){
       self.appView = new AppView({ collection: {} });
       self.appView.showProduct(id);
+    },
+    showCart: function(){
+      alert('show cart');
     }
   });
 
