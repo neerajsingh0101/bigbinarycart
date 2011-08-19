@@ -34,6 +34,12 @@ $(function(){
       var fragment = $.tmpl(this.template, this.model.toJSON());
       $(this.el).html(fragment);
       return this;
+    },
+    events: {
+      "click #productDetails a": "addToCart"
+    },
+    addToCart: function(){
+      alert('adding to cart');
     }
   });
 
