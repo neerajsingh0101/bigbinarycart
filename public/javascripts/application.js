@@ -57,6 +57,18 @@ $(function(){
     }
   });
 
+  window.CartView = Backbone.View.extend({
+    template: $('#cartTmpl').template(),
+    initialize: function(){
+      _.bindAll(this, 'render');
+    },
+    render: function(){
+      var fragment = $.tmpl(this.template);
+      $(this.el).html(fragment);
+      return this;
+    }
+  });
+
   window.AppView = Backbone.View.extend({
     el: $('#products'),
     initialize: function(){
@@ -120,7 +132,10 @@ $(function(){
       self.appView.showProduct(id);
     },
     showCart: function(){
-      alert('show cart');
+      var mainElement = $('#main'), view = new CartView({}), fragment = view.render().el;
+      console.log(fragment);
+      mainElement.html(fragment);
+      return false;
     }
   });
 
