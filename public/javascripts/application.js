@@ -132,10 +132,21 @@ $(function(){
       self.appView.showProduct(id);
     },
     showCart: function(){
-      var mainElement = $('#main'), view = new CartView({}), fragment = view.render().el;
-      console.log(fragment);
-      mainElement.html(fragment);
+
+      $.ajax({
+        url: '/cart',
+        success: function(data) {
+          $('.result').html(data);
+          alert('Load was performed.');
+        }
+      });
+
+
+      //var mainElement = $('#main'), view = new CartView({}), fragment = view.render().el;
+      //console.log(fragment);
+      //mainElement.html(fragment);
       return false;
+
     }
   });
 
