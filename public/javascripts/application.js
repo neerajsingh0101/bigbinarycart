@@ -101,7 +101,6 @@ $(function(){
 
 
   window.AppView = Backbone.View.extend({
-    el: $('#products'),
     initialize: function(){
       _.bindAll(this, 'render', 'showProduct');
     },
@@ -113,14 +112,14 @@ $(function(){
     render: function(){
       this.renderHeader();
 
-      $('.gallery').remove();
-      var targetElement = $('#products');
+      var targetElement = $("<div id='products'></div>");
       var self = this;
       this.collection.each(function(product){
         var view = new ProductViewForListing({model: product}),
             fragment = view.render().el;
-        self.el.append(fragment);
+        targetElement.append(fragment);
       });
+      $('#main').html(targetElement);
     },
     showProduct: function(id){
       this.renderHeader();
@@ -128,10 +127,9 @@ $(function(){
       var product = new Product({id: id}), self = this;
       product.fetch({
         success: function(){
-          var mainElement = self.el.closest('#main'),
+          var mainElement = $('#main'),
               view = new ProductViewForShow({model: product});
-          mainElement.find('#products').html('');
-          self.el.append(view.render().el);
+          mainElement.html( view.render().el);
         },
         error: function(){ alert('error getting product details'); }
       });
