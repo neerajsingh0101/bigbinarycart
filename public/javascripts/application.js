@@ -70,8 +70,19 @@ $(function(){
     events: {
       "click #productDetails a": "addToCart"
     },
-    addToCart: function(){
-      window.App.navigate('cart', true);
+    addToCart: function(e){
+      var productId = $('#productDetails p.cart a').attr('data-product-id');
+      alert(productId);
+      $.ajax({
+         type: "POST",
+         url: "/carts",
+         data: "product_id="+productId,
+         success: function(msg){
+          window.App.navigate('cart', true);
+          return false;
+         }
+       });
+
       return false;
     }
   });
@@ -156,7 +167,7 @@ $(function(){
     showCart: function(){
       window.lineItems.fetch({
         success: function(data){
-          var mainElement = $('#main'),
+          var
               cartView = new CartView({}),
               cartFragment = $(cartView.render().el);
 
@@ -166,7 +177,7 @@ $(function(){
             $(cartFragment).find('table').append(lineItemFragment);
           });
 
-          mainElement.html(cartFragment);
+          $('#content').html(cartFragment);
           return false;
         }
       });

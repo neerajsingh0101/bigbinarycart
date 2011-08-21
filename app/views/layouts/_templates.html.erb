@@ -123,8 +123,8 @@
     <h2>${name}</h2>
     <p class="productPrice">$${price}</p>
     <p class='productDesc'>${description}</p>
-    <p>
-      <a href="/cart?product_id=${id}" data-method="post" rel="nofollow">
+    <p class='cart'>
+      <a href="/cart" data-product-id="${id}" data-method="post" rel="nofollow">
         <span class="buttonAddToShoppingBag">
           Add to Shopping Cart
         </span>

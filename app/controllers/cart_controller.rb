@@ -11,7 +11,11 @@ class CartController < ApplicationController
   def create
     product = Product.find(params[:product_id])
     current_order.add(product)
-    redirect_to cart_url
+    respond_to do |format|
+      format.js do
+        render :json => {}
+      end
+    end
   end
 
   def update
