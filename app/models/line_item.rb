@@ -1,7 +1,5 @@
 class LineItem < ActiveRecord::Base
 
-  attr_accessor :price
-
   belongs_to :product
   belongs_to :order
 
@@ -14,7 +12,7 @@ class LineItem < ActiveRecord::Base
   end
 
   def as_json(options = {})
-    super(:include => [:product])
+    super({}.merge(:include => [:product], :methods => [:price]))
   end
 
 end

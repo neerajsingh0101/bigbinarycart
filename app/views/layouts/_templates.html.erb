@@ -42,7 +42,7 @@
   <tr>
     <td class="thumb">
       <a href="/system/pictures/18/original/Screen_shot_2010-03-26_at_4.55.11_PM.jpg" class="single_image">
-        <img alt="Mac Pro" height="60" src="/system/pictures/18/thumbnail/Screen_shot_2010-03-26_at_4.55.11_PM.jpg" width="60" />
+        <img alt="${product.name}" height="60" src="/system/pictures/${product.id}/thumbnail/${product.picture_file_name}" width="60" />
       </a>
     </td>
     <td class="left">
@@ -65,7 +65,7 @@
       </a>
     </td>
     <td class="productTotal">
-      $2,499.99
+      $${price}
     </td>
     <td>
       <a href="/cart?product_id=18" data-method="delete" rel="nofollow" title="Remove">
