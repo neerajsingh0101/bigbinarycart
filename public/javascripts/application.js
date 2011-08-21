@@ -10,6 +10,38 @@ $(function(){
     url: '/products'
   });
 
+  window.LineItem = Backbone.Model.extend({ });
+
+  window.LineItemsList = Backbone.Collection.extend({
+    model: LineItem,
+    url: '/cart'
+  });
+
+  window.CartView = Backbone.View.extend({
+    template: $('#cartTmpl').template(),
+    initialize: function(){
+      _.bindAll(this, 'render');
+    },
+    render: function(){
+      var fragment = $.tmpl(this.template);
+      $(this.el).html(fragment);
+      return this;
+    }
+  });
+
+  window.LineItemView = Backbone.View.extend({
+    template: $('#lineItemTmpl').template(),
+    tagName: 'tbody',
+    initialize: function(){
+      _.bindAll(this, 'render');
+    },
+    render: function(){
+      var fragment = $.tmpl(this.template);
+      $(this.el).html(fragment);
+      return this;
+    }
+  });
+
   window.ProductViewForListing = Backbone.View.extend({
     template: $('#productTmplForListing').template(),
     initialize: function() {
@@ -57,17 +89,6 @@ $(function(){
     }
   });
 
-  window.CartView = Backbone.View.extend({
-    template: $('#cartTmpl').template(),
-    initialize: function(){
-      _.bindAll(this, 'render');
-    },
-    render: function(){
-      var fragment = $.tmpl(this.template);
-      $(this.el).html(fragment);
-      return this;
-    }
-  });
 
   window.AppView = Backbone.View.extend({
     el: $('#products'),
@@ -109,6 +130,7 @@ $(function(){
   });
 
   window.products = new ProductsList();
+  window.lineItems = new LineItemsList();
 
   window.AppRouter = Backbone.Router.extend({
     initialize: function(){
@@ -132,21 +154,20 @@ $(function(){
       self.appView.showProduct(id);
     },
     showCart: function(){
+      window.lineItems.fetch({
+        success: function(data){
+          var mainElement = $('#main'),
+              cartView = new CartView({}),
+              cartFragment = cartView.render().el,
+              lineItemView = new LineItemView({}),
+              lineItemFragment = lineItemView.render().el;
 
-      $.ajax({
-        url: '/cart',
-        success: function(data) {
-          $('.result').html(data);
-          alert('Load was performed.');
+          fragment = $(cartFragment).find('table').append(lineItemFragment);
+          mainElement.html(cartFragment);
+          return false;
         }
       });
-
-
-      //var mainElement = $('#main'), view = new CartView({}), fragment = view.render().el;
-      //console.log(fragment);
-      //mainElement.html(fragment);
       return false;
-
     }
   });
 
