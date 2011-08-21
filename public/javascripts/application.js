@@ -36,8 +36,8 @@ $(function(){
       _.bindAll(this, 'render');
     },
     render: function(){
-      var fragment = $.tmpl(this.template);
-      $(this.el).html(fragment);
+        var fragment = $.tmpl(this.template, this.model.toJSON());
+        $(this.el).html(fragment);
       return this;
     }
   });
@@ -158,11 +158,14 @@ $(function(){
         success: function(data){
           var mainElement = $('#main'),
               cartView = new CartView({}),
-              cartFragment = cartView.render().el,
-              lineItemView = new LineItemView({}),
-              lineItemFragment = lineItemView.render().el;
+              cartFragment = $(cartView.render().el);
 
-          fragment = $(cartFragment).find('table').append(lineItemFragment);
+          window.lineItems.each(function(lineItem){
+            lineItemView = new LineItemView({model: lineItem});
+            lineItemFragment = lineItemView.render().el;
+            $(cartFragment).find('table').append(lineItemFragment);
+          });
+
           mainElement.html(cartFragment);
           return false;
         }

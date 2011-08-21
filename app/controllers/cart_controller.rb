@@ -4,6 +4,7 @@ class CartController < ApplicationController
 
   def show
     @line_items = current_order.line_items.order('id')
+    Rails.logger.info @line_items.to_json
     respond_with @line_items
   end
 
