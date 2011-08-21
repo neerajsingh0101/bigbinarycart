@@ -72,10 +72,9 @@ $(function(){
     },
     addToCart: function(e){
       var productId = $('#productDetails p.cart a').attr('data-product-id');
-      alert(productId);
       $.ajax({
          type: "POST",
-         url: "/carts",
+         url: "/cart",
          data: "product_id="+productId,
          success: function(msg){
           window.App.navigate('cart', true);
@@ -167,10 +166,7 @@ $(function(){
     showCart: function(){
       window.lineItems.fetch({
         success: function(data){
-          var
-              cartView = new CartView({}),
-              cartFragment = $(cartView.render().el);
-
+          var cartView = new CartView({}), cartFragment = $(cartView.render().el);
           window.lineItems.each(function(lineItem){
             lineItemView = new LineItemView({model: lineItem});
             lineItemFragment = lineItemView.render().el;
