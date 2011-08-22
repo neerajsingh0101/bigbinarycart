@@ -10,7 +10,7 @@ $(function(){
     url: '/products'
   });
 
-  window.LineItem = Backbone.Model.extend({ });
+  window.LineItem = Backbone.Model.extend({});
 
   window.LineItemsList = Backbone.Collection.extend({
     model: LineItem,
@@ -81,7 +81,6 @@ $(function(){
           return false;
          }
        });
-
       return false;
     }
   });
@@ -98,7 +97,6 @@ $(function(){
       return this;
     }
   });
-
 
   window.AppView = Backbone.View.extend({
     initialize: function(){
@@ -134,6 +132,22 @@ $(function(){
         error: function(){ alert('error getting product details'); }
       });
       return false;
+    },
+    showCart: function(){
+      this.renderHeader();
+      window.lineItems.fetch({
+        success: function(data){
+          var cartView = new CartView({}), cartFragment = $(cartView.render().el);
+          window.lineItems.each(function(lineItem){
+            lineItemView = new LineItemView({model: lineItem});
+            lineItemFragment = lineItemView.render().el;
+            $(cartFragment).find('table').append(lineItemFragment);
+          });
+
+          $('#main').html(cartFragment);
+          return false;
+        }
+      });
     }
   });
 
@@ -162,20 +176,8 @@ $(function(){
       self.appView.showProduct(id);
     },
     showCart: function(){
-      window.lineItems.fetch({
-        success: function(data){
-          var cartView = new CartView({}), cartFragment = $(cartView.render().el);
-          window.lineItems.each(function(lineItem){
-            lineItemView = new LineItemView({model: lineItem});
-            lineItemFragment = lineItemView.render().el;
-            $(cartFragment).find('table').append(lineItemFragment);
-          });
-
-          $('#content').html(cartFragment);
-          return false;
-        }
-      });
-      return false;
+      self.appView = new AppView({ collection: {} });
+      self.appView.showCart();
     }
   });
 
