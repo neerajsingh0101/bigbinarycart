@@ -18,6 +18,7 @@ $(function(){
   });
 
   window.CartView = Backbone.View.extend({
+    className: 'cart cart-show',
     template: $('#cartTmpl').template(),
     initialize: function(){
       _.bindAll(this, 'render');
@@ -143,7 +144,6 @@ $(function(){
             lineItemFragment = lineItemView.render().el;
             $(cartFragment).find('table').append(lineItemFragment);
           });
-
           $('#main').html(cartFragment);
           return false;
         }
