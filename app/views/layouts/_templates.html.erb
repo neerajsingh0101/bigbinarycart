@@ -82,7 +82,7 @@
     <img alt="${name}" class="productImage" height="190" src="/system/pictures/${id}/thumbnail/${picture_file_name}" width="190" />
   </a>
   <p class="productName">
-    <a href="/products/${id}">
+    <a href="#products/${id}">
       ${name}
     </a>
   </p>
@@ -114,9 +114,7 @@
 <script type="text/x-jquery-tmpl" id="productTmplForShow">
   <div id='productImage'>
     <div id='slideshow' class='pics'>
-      <a href="/system/pictures/${id}/original/${picture_file_name}" class="single_image">
         <img alt="${name}" height="420" src="/system/pictures/${id}/original/${picture_file_name}" width="420" />
-      </a>
     </div>
   </div>
   <div id="productDetails">
