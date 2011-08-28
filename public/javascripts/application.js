@@ -136,6 +136,7 @@ $(function(){
     },
     showCart: function(){
       this.renderHeader();
+
       window.lineItems.fetch({
         success: function(data){
           var cartView = new CartView({}), cartFragment = $(cartView.render().el);
