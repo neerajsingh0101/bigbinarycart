@@ -82,6 +82,15 @@
 }
 
 #shoppingBag-table td.left { text-align: left; }
-#shoppingBag-table tbody td { border-bottom: 1px solid #dadada; }
+#shoppingBag-table tbody td,
+#shoppingBag-table tfoot tr:first-child td { border-bottom: 1px solid #dadada; }
 #shoppingBag-table .buttonLess { margin-left: -86px;}
 #shoppingBag-table .buttonMore { margin-left: -25px;}
+
+/* @group fix */
+
+tfoot a[rel="submit"] {
+    margin-top: -10px;
+}
+
+/* @end */

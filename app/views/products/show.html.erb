@@ -9,13 +9,25 @@
 
   	<div id="productDetails">
   		<h2><%= @product.name %></h2>
+  		
+  		<ul>
+  		  <li><%= number_to_currency @product.price %></li>
+  		  <li><%= simple_format @product.description %></li>
+  		  <li>
+          <%= link_to raw('Add to Shopping Cart'), cart_path(:product_id => @product.id), :title=>"Add #{h @product.name} to my Shopping Cart.", :method => :post, :class=> "add-to-cart" %>
+  		  </li>
+  		</ul>
+
+<!--  		
   		<p class="productPrice"><%= number_to_currency @product.price %></p>
   		<%= simple_format @product.description %>
   		<p></p>
 
       <p>
-        <%= link_to raw('<span class="buttonAddToShoppingBag">Add to Shopping Cart</span>'), cart_path(:product_id => @product.id), :method => :post %>
+        <%= link_to raw('Add to Shopping Cart'), cart_path(:product_id => @product.id), :title=>"Add #{h @product.name} to my Shopping Cart.", :method => :post, :class=> "add-to-cart" %>
       </p>
+-->
+
   	</div>
 
   </div>

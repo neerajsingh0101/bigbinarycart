@@ -6,14 +6,15 @@
     <meta name="description" content="<%= yield(:description) %>" />
     <meta name="keywords" content="<%= yield(:keywords) %>" />
     <meta name="robots" content="INDEX,FOLLOW" />
-
+    <link href='http://fonts.googleapis.com/css?family=Corben:700&amp;v2' rel='stylesheet' type='text/css' />
     <%= stylesheet_link_tag 'default' %>
+    
     <!--[if IE 7]><%= stylesheet_link_tag 'ie7-fix' %><![endif]-->
     <!--[if gt IE 7]><%= stylesheet_link_tag 'ie8-fix' %><![endif]-->
 
-    <%= javascript_include_tag 'jquery', 'rails', 'application' %>
+
     <%= csrf_meta_tag %>
-    <link href='http://fonts.googleapis.com/css?family=Corben:700&v2' rel='stylesheet' type='text/css'>
+
   </head>
   <body class="<%= body_class %>">
     <% if flash %>
@@ -32,14 +33,12 @@
           </h1>
 
           <div id="details">
-            <span class="details">
-              <span class="topDivider">|</span>
-              <%= pluralize(current_order.line_items.count, 'item') %>
-              <span class="topDivider">|</span>
-              <%= number_to_currency current_order.price %>
-            </span>
-
-            <%= link_to raw('<span class="shoppingBag">Shopping Cart</span>'), cart_path, :title => 'Shopping Bag' %>
+            <ul>
+              <li>Cost before shipping <%= number_to_currency current_order.price %></li>
+              <li class="shopping-cart" ><%= link_to raw("Shopping Cart"), cart_path, :title => "Shopping Bag", :rel => "shopping-cart" %>
+                <span class="line-item-count" ><%= current_order.line_items.count %></span>
+              </li>
+            </ul>
           </div>
         <div style='clear:both;'></div>
       </div>
@@ -54,7 +53,7 @@
 
     <div id="footer" style='background: #dce8ee;border:2px solid #c3cfd6;'>
       <div style='float:left;'>
-        <%= link_to image_tag('http://www.bigbinary.com/images/bigbinary_logo_web.png'), 'http://BigBinary.com' %>
+        <%= link_to image_tag('http://www.bigbinary.com/images/bigbinary_logo_web.png', :height=>60, :width=>160, :alt=> "BigBinary.com"), 'http://BigBinary.com' %>
       </div>
       <div style='float:right; width: 700px;line-height: 25px;'>
         BackboneCart is an open source application meant to enhance learning of Backbone.js.
@@ -64,6 +63,8 @@
       </div>
       <div style='clear:both;'></div>
     </div>
+
+    <%= javascript_include_tag 'jquery', 'rails', 'application' %>
 
   </body>
 </html>

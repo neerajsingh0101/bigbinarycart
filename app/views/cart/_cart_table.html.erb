@@ -13,13 +13,13 @@
 
   <tfoot>
     <tr>
-      <td colspan="4"><span class="costBeforeShipping right">Cost before shipping</span></td>
-      <td colspan="5"><span class="totalPrice">=&nbsp;<strong><%= number_to_currency current_order.price %></strong></span></td>
+      <td colspan="4" >Cost before shipping</td>
+      <td colspan="2" >= <strong><%= number_to_currency current_order.price %></strong></td>
     </tr>
-    <tr class="noBorder">
+    <tr>
       <td colspan="6">
-        <span class="right"><%= link_to raw('<span class="buttonProceedToCheckout">Proceed To Checkout</span>'), checkout_path %></span>
-        <span class="continueShopping right"><%= link_to 'Continue shopping', root_url %> or</span>
+        <%= link_to 'Continue shopping', root_url, :rel=> "continue", :title=> "I want to continue shopping." %> or
+        <%= link_to raw('Proceed To Checkout'), checkout_path, :rel=>"submit", :title=> "I am ready to checkout." %>
       </td>
     </tr>
   </tfoot>
@@ -40,7 +40,7 @@
           </td>
           <td class="productTotal"><%= number_to_currency line_item.price %></td>
           <td>
-            <%= link_to raw('<span class="buttonRemove">Remove</span>'), cart_path(:product_id => line_item.product.id), :method => :delete, :title => 'Remove' %>
+            <%= link_to raw('Remove'), cart_path(:product_id => line_item.product.id), :method => :delete, :title => "Remove #{h line_item.product.name} from my cart.", :class=> "delete" %>
           </td>
         </tr>
       <% end %>
