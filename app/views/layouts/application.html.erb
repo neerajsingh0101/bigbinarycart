@@ -8,7 +8,7 @@
     <meta name="robots" content="INDEX,FOLLOW" />
     <link href='http://fonts.googleapis.com/css?family=Corben:700&amp;v2' rel='stylesheet' type='text/css' />
     <%= stylesheet_link_tag 'default' %>
-    
+
     <!--[if IE 7]><%= stylesheet_link_tag 'ie7-fix' %><![endif]-->
     <!--[if gt IE 7]><%= stylesheet_link_tag 'ie8-fix' %><![endif]-->
 
@@ -34,7 +34,7 @@
 
           <div id="details">
             <ul>
-              <li>Cost before shipping <%= number_to_currency current_order.price %></li>
+              <li>Cost  <%= number_to_currency current_order.price %></li>
               <li class="shopping-cart" ><%= link_to raw("Shopping Cart"), cart_path, :title => "Shopping Bag", :rel => "shopping-cart" %>
                 <span class="line-item-count" ><%= current_order.line_items.count %></span>
               </li>
